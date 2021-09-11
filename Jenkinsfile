@@ -1,8 +1,4 @@
 pipeline{
-agent { label 'windows'}
-tools{
-maven 'M3'
-}
 stages {
 stage ('checkout'){
 git 'https://github.com/HarishAlapati/Cucumber.git'
