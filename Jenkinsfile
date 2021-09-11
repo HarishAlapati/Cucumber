@@ -9,7 +9,7 @@ steps{
 stage ('Test'){
 steps{
 bat 'mvn test'
-junit '**/target/surefire-reports/Test-*.xml'
+
 }
 }
 }
