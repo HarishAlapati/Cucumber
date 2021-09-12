@@ -4,12 +4,12 @@ pipeline {
    stages {
       stage('Build') {
          steps {
-            bat 'mvn -B compile'
+            bat 'mvn clean compile'
          }
       }
       stage('Test'){
           steps{
-              bat 'mvn -B clean install'
+              bat 'mvn test'
               cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
               }
       }
