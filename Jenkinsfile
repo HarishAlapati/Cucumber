@@ -15,11 +15,7 @@ pipeline {
               }
       }
       
-        stage('Pacakage') {
-         steps {
-            bat 'mvn package'
-         }
-      }
+
       }
 }
 
