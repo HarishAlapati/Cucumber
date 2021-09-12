@@ -2,6 +2,12 @@ pipeline {
    agent any
 
    stages {
+      stage('Checkout') {
+         steps {
+            git 'https://github.com/HarishAlapati/Cucumber.git'
+         }
+      }
+  
       stage('Build') {
          steps {
             bat 'mvn clean compile'
@@ -10,10 +16,15 @@ pipeline {
       stage('Test'){
           steps{
               bat 'mvn test'
-              cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+              junit '**/target/surefire-reports/TEST-*.xml'
               }
       }
-
+      
+        stage('Pacakage') {
+         steps {
+            bat 'mvn package'
+         }
+      }
       }
 }
 
