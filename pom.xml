@@ -11,7 +11,7 @@
     <build> <!-- For testng file integration with pom.xml file  -->
   
   <plugins>
-      <plugin>
+	<plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M5</version>
@@ -20,15 +20,33 @@
             <suiteXmlFile>testng.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
+		<dependencies>
+	    <dependency>
+    <groupId>net.masterthought</groupId>
+    <artifactId>cucumber-reporting</artifactId>
+    <version>3.15.0</version>
+</dependency>
+    </dependencies>
       </plugin>
-	  <plugin>
+	  
+	   <!-- <plugin>
     <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <configuration>
-        <source>1.6</source>
-        <target>1.6</target>
-    </configuration>
-</plugin>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0-M5</version>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.maven.surefire</groupId>
+        <artifactId>surefire-junit47</artifactId>
+        <version>3.0.0-M5</version>
+      </dependency>
+	    <dependency>
+    <groupId>net.masterthought</groupId>
+    <artifactId>cucumber-reporting</artifactId>
+    <version>3.15.0</version>
+</dependency>
+    </dependencies>
+
+  </plugin>-->
 </plugins>
   </build>
   
@@ -117,6 +135,14 @@
 	<artifactId>cucumber-extentsreport</artifactId>
 	<version>3.0.2</version>
 </dependency>
+	  
+	  <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+<dependency>
+    <groupId>net.masterthought</groupId>
+    <artifactId>cucumber-reporting</artifactId>
+    <version>3.15.0</version>
+</dependency>
+
 
   </dependencies>
 </project>

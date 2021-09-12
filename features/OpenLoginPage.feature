@@ -16,3 +16,4 @@ Scenario: Check title
 Given Open Browser using the Chrome Driver
 And navigate to given url
 Then Check title
+
