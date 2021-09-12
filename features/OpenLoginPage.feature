@@ -10,4 +10,10 @@ Then Enter <email> and <pass>
 Examples:
 |email|pass|
 |e1|p1|
+|e2|p2|
+
+Scenario: Check title
+Given Open Browser using the Chrome Driver
+And navigate to given url
+Then Check title
 
